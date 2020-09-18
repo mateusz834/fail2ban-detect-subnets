@@ -42,8 +42,8 @@ filter = fail2ban-detect-subnets[jail="ssh"]
 action = iptables-multiport-subnet[port="22",blocktype="DROP",chain="fail2ban",mask4="24",mask6="64"]
 ```
 Edit fail2ban-detect-subnets-masker.sh according to your needs.<br>
-Only jails defined in this script are used.
-You can override mask for specific jails.
+Only jails defined in this script are used.<br>
+You can override mask for specific jails.<br>
 Example:
 ```
 #!/bin/bash
