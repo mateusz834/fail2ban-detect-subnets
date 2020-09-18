@@ -5,7 +5,7 @@
 Copy:
 ```
 cp ./fail2ban-detect-subnets.sh /usr/local/sbin/ 
-cp ./fail2ban-detect-subnets-masker.sh /usr/local/sbin
+cp ./fail2ban-detect-subnets-masker.sh /usr/local/sbin/
 ```
 
 Send fail2ban logs to syslog: <br>
