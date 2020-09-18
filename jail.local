@@ -1,0 +1,22 @@
+[DEFAULT]
+ignoreip = 127.0.0.0/8 ::1
+bantime = 57600
+findtime = 1200
+backend = systemd
+
+[ssh]
+enabled = true
+filter  = sshd
+action = iptables-multiport[port="22", blocktype="DROP", chain="fail2ban"]
+bantime = 1d
+findtime = 2h
+maxretry =  5
+
+
+[ssh-subnet]
+enabled = true
+filter = fail2ban-detect-subnets[jail="ssh"]
+action = iptables-multiport-subnet[port="22",blocktype="DROP",chain="fail2ban",mask4="24",mask6="64"]
+bantime = 2d
+findtime = 2h
+maxretry =  21
