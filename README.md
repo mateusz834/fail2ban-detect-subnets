@@ -1,1 +1,1 @@
-# fail2ban-detect-subnet
+# fail2ban-detect-subnets
