@@ -1,0 +1,10 @@
+[Unit]
+Description=fail2ban-detect-subnets
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/local/sbin/fail2ban-detect-subnets.sh
+
+[Install]
+WantedBy=multi-user.target
