@@ -6,6 +6,7 @@ Copy:
 ```
 cp ./fail2ban-detect-subnets.sh /usr/local/sbin/ 
 cp ./fail2ban-detect-subnets-masker.sh /usr/local/sbin/
+cp ./fail2ban-detect-subnets.service /etc/systemd/system/
 ```
 
 Send fail2ban logs to syslog: <br>
@@ -57,4 +58,9 @@ case $1 in
   "[nginx]") ;;
   *) exit 0
 esac
+```
+Run fail2ban-detect-subnets:
+```
+systemctl start fail2ban-detect-subnets
+systemctl enable fail2ban-detect-subnets
 ```
