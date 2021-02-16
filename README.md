@@ -42,22 +42,21 @@ enabled = true
 filter = fail2ban-detect-subnets[jail="ssh"]
 action = iptables-multiport-subnet[port="22",blocktype="DROP",chain="fail2ban",mask4="24",mask6="64"]
 ```
-Edit fail2ban-detect-subnets-masker.sh according to your needs.<br>
-Only jails defined in this script are used.<br>
-You can override mask for specific jails.<br>
+
+Create config direcotry:<br>
+```
+sudo mkdir /usr/local/etc/fail2ban-detect-subnets
+```
+
+Edit /usr/local/etc/fail2ban-detect-subnets/conf according to your needs.<br>
+config line syntax: <br>
+```
+{jail-name} {mask-ipv4} {mask-ipv6}
+```
 Example:
 ```
-#!/bin/bash
-mask4=28
-mask6=64
-
-case $1 in
-  "[ssh]") mask4=24 ;;
-  "[postfix]") ;;
-  "[dovecot]") ;;
-  "[nginx]") ;;
-  *) exit 0
-esac
+ssh 24 64
+nginx 22 96
 ```
 Run fail2ban-detect-subnets:
 ```
