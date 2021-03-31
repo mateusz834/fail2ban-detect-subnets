@@ -43,7 +43,7 @@ filter = fail2ban-detect-subnets[jail="ssh"]
 action = iptables-multiport-subnet[port="22",blocktype="DROP",chain="fail2ban",mask4="24",mask6="64"]
 ```
 
-Create config direcotry:<br>
+Create config directory:<br>
 ```
 sudo mkdir /usr/local/etc/fail2ban-detect-subnets
 ```
